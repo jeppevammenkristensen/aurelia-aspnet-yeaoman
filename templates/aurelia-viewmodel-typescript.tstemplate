@@ -1,0 +1,12 @@
+export class <%= viewName %> {
+    static inject = [];
+    constructor(){
+      this.message = "Hello world";
+    }
+
+    activate(){
+
+    }
+
+    message : String;
+}

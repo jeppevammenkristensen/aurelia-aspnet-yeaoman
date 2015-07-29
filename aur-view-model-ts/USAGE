@@ -1,0 +1,9 @@
+Description:
+	Creates a view and a typescript viewmodel
+
+Example:
+	yo aspnet:aur-view-model-ts name
+
+	This will create:
+		name.html
+	  name.ts

@@ -1,0 +1,8 @@
+Description:
+	Creates an index that hooks up to aurelia
+
+Example:
+	yo aspnet:aur-index filename
+
+	This will create:
+		filename.js
