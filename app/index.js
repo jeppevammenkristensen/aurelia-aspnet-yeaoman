@@ -3,6 +3,7 @@ var yosay = require('yosay');
 var path = require('path');
 var projectName = require('vs_projectname');
 var guid = require('uuid');
+var chalk = require('chalk');
 
 var AspNetGenerator = yeoman.generators.Base.extend({
 
@@ -42,13 +43,20 @@ var AspNetGenerator = yeoman.generators.Base.extend({
 
           this.template(this.sourceRoot() + '/Startup.cs', this.applicationName + '/Startup.cs', this.templatedata);
 
-          this.fs.copy(this.sourceRoot() + '/*.{json,js,ts}', this.applicationName + '/');
+          this.fs.copy(this.sourceRoot() + '/*.{json,js,ts,html}', this.applicationName + '/');
 
           /// wwwroot
           this.fs.copy(this.templatePath('/wwwroot/**/*'), this.destinationPath(this.applicationName + '/wwwroot'));
   },
   end : function(){
-
+    this.log('\r\n');
+    this.log('Your project is now created. To get started');
+    this.log(chalk.green('    cd ' + this.applicationName + ''));
+    this.log(chalk.green('    npm install'));
+    this.log(chalk.green('    jspm install ') + ' (optional, build will also happen when it\'s run)');
+    this.log(chalk.green('    dnx . run') + ' for console projects');
+    this.log(chalk.green('    dnx . kestrel') + ' or ' + chalk.green('dnx . web') + ' for web projects');
+    this.log('\r\n');
   }
   });
 

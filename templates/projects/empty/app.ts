@@ -6,5 +6,9 @@ export class App{
    constructor(){
      this.created =  new Date();
      this.message = "Power to the hello world";
-   }   
+   }
+
+    changeMessage() {
+        this.message = "I have been changed";
+    }
 }
