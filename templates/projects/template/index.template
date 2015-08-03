@@ -1,0 +1,20 @@
+'use strict';
+var util = require('util');
+var ScriptBase = require('../script-base.js');
+var changeCase = require('change-case');
+var extension = "template";
+var name = "<%= name %>";
+var destination = name + "." + extension;
+
+var NamedGenerator = module.exports = function NamedGenerator() {
+  ScriptBase.apply(this, arguments);
+};
+
+util.inherits(NamedGenerator, ScriptBase);
+
+NamedGenerator.prototype.createNamedItem = function() {
+
+	this.generateTemplateFile(
+    '<%= name %>.template', destination, { namedParameter : 'parameterValue' }
+  );
+};
