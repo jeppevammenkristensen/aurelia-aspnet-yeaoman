@@ -43,7 +43,7 @@ var AspNetGenerator = yeoman.generators.Base.extend({
 
           this.template(this.sourceRoot() + '/Startup.cs', this.applicationName + '/Startup.cs', this.templatedata);
 
-          //this.fs.copy(this.sourceRoot() + '/*.{json,js,ts,html}', this.applicationName + '/');
+          this.fs.copy(this.sourceRoot() + '/*.{json,js,ts,html}', this.applicationName + '/');
 
           /// wwwroot
           this.fs.copy(this.templatePath('/wwwroot/**/*'), this.destinationPath(this.applicationName + '/wwwroot'));
