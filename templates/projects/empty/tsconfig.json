@@ -5,14 +5,5 @@
         "removeComments": false,
         "sourceMap": false,
         "target": "es6"
-    },
-    "filesGlob": [
-        "./**/*.ts",
-        "!./node_modules/**/*",
-        "!./wwwroot/**/*"
-    ],
-    "files": [
-        "./app.ts",
-        "./main.ts"
-    ]
+    }
 }
